@@ -11,11 +11,6 @@
                 <class>TOP_SAP_Helper</class>
             </top_sap>
         </helpers>
-        <models>
-            <top_sap>
-                <class>TOP_SAP_Model</class>
-            </top_sap>
-        </models>
         <events>
             <sales_order_place_after>
                 <observers>
