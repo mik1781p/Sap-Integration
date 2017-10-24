@@ -27,6 +27,9 @@ class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstra
             2017-10-24T10:23:19+00:00 DEBUG (7): PostCode:
             2017-10-24T10:23:19+00:00 DEBUG (7): Ancora test
 
+            2017-10-24T10:23:19+00:00 DEBUG (7): Region:
+            2017-10-24T10:23:19+00:00 DEBUG (7): null || Il test dei test
+
             2017-10-24T10:23:19+00:00 DEBUG (7): Country:
             2017-10-24T10:23:19+00:00 DEBUG (7): IT
 
@@ -37,6 +40,8 @@ class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstra
         Mage::log($event_Observer->getOrder()->getShippingAddress()->getCity());
         Mage::log('PostCode: ');
         Mage::log($event_Observer->getOrder()->getShippingAddress()->getPostcode());
+        Mage::log('Region: ');
+        Mage::log($event_Observer->getOrder()->getShippingAddress()->getRegion());
         Mage::log('Country: ');
         Mage::log($event_Observer->getOrder()->getShippingAddress()->getCountryId());
         die;
