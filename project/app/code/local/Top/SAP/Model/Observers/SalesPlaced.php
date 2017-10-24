@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Class TOP_SAP_Model_observers_SalesPlaced
+ * Class Top_SAP_Model_observers_SalesPlaced
  */
 
 /**
- * Class TOP_SAP_Model_observers_SalesPlaced
+ * Class Top_SAP_Model_observers_SalesPlaced
  * Observer on sales_order_place_after
  */
 
-class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstract
+class Top_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstract
 {
     /**
      * Example data:
@@ -83,3 +83,4 @@ class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstra
          Mage::log($data,null,"Coordinates.log", true);
     }
 }
+

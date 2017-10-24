@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
     <modules>
-        <TOP_SAP>
+        <Top_SAP>
             <version>0.1.0</version>
-        </TOP_SAP>
+        </Top_SAP>
     </modules>
     <global>
         <helpers>
             <top_sap>
-                <class>TOP_SAP_Helper</class>
+                <class>Top_SAP_Helper</class>
             </top_sap>
         </helpers>
+        <models>
+            <top_sap>
+                <class>Top_SAP_Model</class>
+            </top_sap>
+        </models>
         <events>
             <sales_order_place_after>
                 <observers>

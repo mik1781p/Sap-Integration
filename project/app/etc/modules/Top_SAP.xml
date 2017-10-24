@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
     <modules>
-        <TOP_SAP>
+        <Top_SAP>
             <active>1</active>
             <codePool>local</codePool>
-        </TOP_SAP>
+        </Top_SAP>
     </modules>
 </config>
