@@ -9,7 +9,8 @@
  * Observer on sales_order_place_after
  */
 
-class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstract {
+class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstract
+{
         /**
          * Example data
                2017-10-24T10:23:19+00:00 DEBUG (7): Street:
@@ -50,43 +51,47 @@ class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstra
             "geo_info_code_msg"
         ));
 
+        $this->sendCurlRequest($url,$request);
+
         /**
          * @param $url
          * @param $request
          * @return mixed
          */
-        function sendCurlRequest($url, $request){
-            $request = json_encode($request);
 
-            $ch = curl_init($url);
+    }
 
-            $options = array(
-                CURLOPT_RETURNTRANSFER => false,         // return web page
-                CURLOPT_HEADER         => false,        // don't return headers
-                CURLOPT_FOLLOWLOCATION => false,         // follow redirects
-                CURLOPT_ENCODING       => "utf-8",           // handle all encodings
-                CURLOPT_AUTOREFERER    => true,         // set referer on redirect
-                CURLOPT_CONNECTTIMEOUT => 100,          // timeout on connect
-                CURLOPT_TIMEOUT        => 100,          // timeout on response
-                CURLOPT_POST            => 1,            // i am sending post data
-                CURLOPT_POSTFIELDS     => $request,    // this are my post vars
-                CURLOPT_SSL_VERIFYPEER => false,        //
-                CURLOPT_VERBOSE        => 1,
-                CURLOPT_HTTPHEADER     => array(
-                    "APIKey: efGDg9BJN8G7AtpS5E2AifA4akVHeLSl",
-                    "Accept: application/json, text/plain",
-                    "Content-Type: application/json"
-                )
+    private function sendCurlRequest($url, $request){
+        $request = json_encode($request);
 
-            );
+        $ch = curl_init($url);
 
-            curl_setopt_array($ch,$options);
+        $options = array(
+            CURLOPT_RETURNTRANSFER => false,         // return web page
+            CURLOPT_HEADER         => false,        // don't return headers
+            CURLOPT_FOLLOWLOCATION => false,         // follow redirects
+            CURLOPT_ENCODING       => "utf-8",           // handle all encodings
+            CURLOPT_AUTOREFERER    => true,         // set referer on redirect
+            CURLOPT_CONNECTTIMEOUT => 100,          // timeout on connect
+            CURLOPT_TIMEOUT        => 100,          // timeout on response
+            CURLOPT_POST            => 1,            // i am sending post data
+            CURLOPT_POSTFIELDS     => $request,    // this are my post vars
+            CURLOPT_SSL_VERIFYPEER => false,        //
+            CURLOPT_VERBOSE        => 1,
+            CURLOPT_HTTPHEADER     => array(
+                "APIKey: efGDg9BJN8G7AtpS5E2AifA4akVHeLSl",
+                "Accept: application/json, text/plain",
+                "Content-Type: application/json"
+            )
+
+        );
+
+        curl_setopt_array($ch,$options);
 
 
-            $data = curl_exec($ch);
-            curl_close($ch);
+        $data = curl_exec($ch);
+        curl_close($ch);
 
-            Mage::log($data);
-        }
+        Mage::log($data);
     }
 }
