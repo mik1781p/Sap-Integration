@@ -9,8 +9,7 @@
  * Observer on sales_order_place_after
  */
 
-class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstract
-{
+class TOP_SAP_Model_observers_SalesPlaced extends Mage_Core_Model_Session_Abstract {
         /**
          * Example data
                2017-10-24T10:23:19+00:00 DEBUG (7): Street:
